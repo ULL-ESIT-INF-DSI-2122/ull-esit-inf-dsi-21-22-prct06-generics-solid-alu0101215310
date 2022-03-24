@@ -1,12 +1,21 @@
 import 'mocha';
 import {expect} from 'chai';
-import {add} from '../src/prueba';
+import {Complex} from '../src/ejercicio-pe';
 
-describe('add function test', () => {
-  it('add(1,8) returns value 9', () => {
-    expect(add(1, 8)).to.be.equal(9);
+const com1 = new Complex(1, 3);
+const com2 = new Complex(2, 4);
+
+describe('Complex class test', () => {
+  it('add function test', () => {
+    expect(com1.add(com2)).to.be.equal(new Complex(3, 7));
+    expect(com2.add(com1)).to.be.equal(new Complex(3, 7));
   });
-  it('add(-1,8) returns value 7', () => {
-    expect(add(-1, 8)).to.be.equal(7);
+  it('substract function test', () => {
+    expect(com1.substract(com2)).to.be.equal(new Complex(-1, -1));
+    expect(com2.substract(com1)).to.be.equal(new Complex(1, 1));
+  });
+  it('multiply function test', () => {
+    expect(com1.multiply(com2)).to.be.equal(new Complex(9, 10));
+    expect(com2.multiply(com1)).to.be.equal(new Complex(9, 10));
   });
 });
