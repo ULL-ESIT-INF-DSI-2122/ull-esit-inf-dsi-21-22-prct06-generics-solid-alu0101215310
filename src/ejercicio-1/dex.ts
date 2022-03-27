@@ -9,16 +9,16 @@ export class Dex {
     this.list = [];
   };
 
-  addPokemon(fighter : Fighter) {
+  addFighter(fighter : Fighter) {
     this.list.push([this.list.length + 1, fighter]);
   }
 
-  selectPoke(pos : number) {
+  selectFighter(pos : number) {
     return this.list[pos-1][1];
   }
 
   print() {
-    console.log('POKEDEX');
+    console.log('DEX');
     this.list.forEach((fighter) => {
       console.log(`${fighter[0]} - ${fighter[1].name}`);
     });

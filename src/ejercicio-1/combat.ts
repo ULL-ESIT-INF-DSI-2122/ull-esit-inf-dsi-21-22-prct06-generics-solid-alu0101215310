@@ -4,10 +4,8 @@ import {Dex} from './dex';
 import {DC} from './dc';
 import {DragonBall} from './dragonBall';
 import {Marvel} from './marvel';
-import {Pokemon} from './pokemon';
+import {Pokemon, Types} from './pokemon';
 import {StarWars} from './starWars';
-
-import {Types} from './pokemon';
 
 export class Combat {
   constructor() {}
@@ -297,12 +295,3 @@ export class Combat {
     return multiplicador;
   }
 };
-
-const combat = new Combat();
-const fighter1 = new Marvel('Spiderman', 10, 10);
-fighter1.setStats([500, 200, 200, 300, 300, 500]);
-fighter1.setPhrase('Soy el hombre araña');
-const fighter2 = new DC('Batman', 30, 50);
-fighter2.setStats([500, 200, 200, 300, 300, 500]);
-fighter2.setPhrase('Yo soy Batman');
-combat.start(fighter1, fighter2);
